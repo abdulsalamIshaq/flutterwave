@@ -53,7 +53,7 @@ class Transactions extends AbstractApi
      */
     public function resend_webhook(int $id)
     {
-        $response = $this->post("transactions/{$id}/resend-hook", [ 'id' => $id ]);
+        $response = $this->post("transactions/{$id}/resend-hook", [ null]);
 
         return $this->responseArray($response);
     }
@@ -104,5 +104,4 @@ class Transactions extends AbstractApi
         return $this->responseArray($response); 
     }
     
-
 }

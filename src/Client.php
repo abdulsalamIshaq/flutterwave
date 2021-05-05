@@ -151,6 +151,7 @@ class Client implements HttpClientInterface
     {
         return [
             'transactions' => \KayodeSuc\Flutterwave\Api\Transactions::class,
+            'transfer' => \KayodeSuc\Flutterwave\Api\Transfer::class,
         ];
     }
     
