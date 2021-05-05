@@ -18,10 +18,6 @@ class Transactions extends AbstractApi
      * 
      * @since 1.0
      * 
-     * @param string|array $from
-     * @param string $to
-     * @param string $sender_id
-     * @param string $channel
      * @return array
      */
     public function all() 
@@ -40,7 +36,7 @@ class Transactions extends AbstractApi
      * @param string $currency
      * @return array
      */
-    public function fee(Int $amount, String $currency = 'NGN') 
+    public function fee(int $amount, string $currency = 'NGN') 
     {
         $response = $this->get('transactions/fee', [ 'amount' => $amount, 'currency' => $currency ]);
 
@@ -55,7 +51,7 @@ class Transactions extends AbstractApi
      * @param Int $id
      * @return array
      */
-    public function resend_webhook(Int $id)
+    public function resend_webhook(int $id)
     {
         $response = $this->post("transactions/{$id}/resend-hook", [ 'id' => $id ]);
 
@@ -71,7 +67,7 @@ class Transactions extends AbstractApi
      * @param Int $amount
      * @return array
      */
-    public function refund(Int $id, Int $amount)
+    public function refund(int $id, int $amount)
     {
         $response = $this->post("transactions/{$id}/refund", [ 'amount' => $amount ]);
 
@@ -86,7 +82,7 @@ class Transactions extends AbstractApi
      * @param Int $id
      * @return array
      */
-    public function verify(Int $id)
+    public function verify(int $id)
     {   
         $response = $this->get("transactions/{$id}/verify");
 
@@ -101,7 +97,7 @@ class Transactions extends AbstractApi
      * @param Int $id
      * @return array
      */
-    public function timeline(Int $id)
+    public function timeline(int $id)
     {
         $response = $this->get("transactions/{$id}/events");
 
