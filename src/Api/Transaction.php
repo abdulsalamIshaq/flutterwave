@@ -10,7 +10,7 @@
  */
 namespace KayodeSuc\Flutterwave\Api;
 
-class Transactions extends AbstractApi
+class Transaction extends AbstractApi
 {
 
     /**
@@ -103,5 +103,5 @@ class Transactions extends AbstractApi
 
         return $this->responseArray($response); 
     }
-    
+
 }

@@ -150,7 +150,7 @@ class Client implements HttpClientInterface
     public function apiMap()
     {
         return [
-            'transactions' => \KayodeSuc\Flutterwave\Api\Transactions::class,
+            'transaction' => \KayodeSuc\Flutterwave\Api\Transaction::class,
             'transfer' => \KayodeSuc\Flutterwave\Api\Transfer::class,
         ];
     }
