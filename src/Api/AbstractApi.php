@@ -39,7 +39,7 @@ class AbstractApi
      * @param array $parameters
      * @return \GuzzleHttp\Response
      */
-    public function get( string $route, array $parameters = [])
+    public function get( string $route, array $parameters = [ null ])
     {
         return $this->client->get($route, $parameters);
     }
@@ -56,6 +56,20 @@ class AbstractApi
     public function post( string $route, array $body)
     {
         return $this->client->post($route, $body);
+    }
+
+    /**
+     * Handle DELETE method
+     * 
+     * @since 1.0
+     * 
+     * @param string $route
+     * @param array $parameters
+     * @return \GuzzleHttp\Response
+     */
+    public function delete( string $route, array $parameters = [ null ])
+    {
+        return $this->client->delete($route, $parameters);
     }
 
     /**

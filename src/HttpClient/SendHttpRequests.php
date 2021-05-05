@@ -70,6 +70,23 @@ trait SendHttpRequests
     }
 
     /**
+     * Handle DELETE method
+     * 
+     * @since 1.0
+     * 
+     * @param string $route
+     * @param array $body
+     * @return \GuzzleHttp\Response
+     */
+    public function delete( string $route, array $parameters = [])
+    {
+        return $this->request('DELETE', $route, [
+            'headers' => $this->headers(),
+            'query' => $parameters,
+        ]);
+    }
+
+    /**
      * Handle GET method
      * 
      * @since 1.0
