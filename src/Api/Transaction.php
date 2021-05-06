@@ -34,9 +34,10 @@ class Transaction extends AbstractApi
      * 
      * @param Int $amount
      * @param string $currency
+     * @param string $payment_type
      * @return array
      */
-    public function fee(int $amount, string $currency = 'NGN') 
+    public function fee(int $amount, string $currency = 'NGN', string $payment_type = 'card') 
     {
         $response = $this->get('transactions/fee', [ 'amount' => $amount, 'currency' => $currency ]);
 
@@ -59,7 +60,7 @@ class Transaction extends AbstractApi
     }
 
     /**
-     * Get transaction refund
+     * Initiate a transaction refund
      * 
      * @since 1.0
      * 
