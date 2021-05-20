@@ -59,6 +59,20 @@ class AbstractApi
     }
 
     /**
+     * Handle PUT method
+     * 
+     * @since 1.0
+     * 
+     * @param string $route
+     * @param array $body
+     * @return \GuzzleHttp\Response
+     */
+    public function put( string $route, array $body = [ null ])
+    {
+        return $this->client->put($route, $body);
+    }
+
+    /**
      * Handle DELETE method
      * 
      * @since 1.0

@@ -111,4 +111,54 @@ class Card extends AbstractApi
         return $this->responseArray($response);
 	}
 
+	/**
+     * Withdraw existing funds from a virtual card
+     * 
+     * @since 1.0
+	 * 
+     * @param string $id
+     *   *
+     * @return array
+     */
+	public function withdraw(string $id, string $amount)
+	{
+		$response = $this->post("virtual-cards/{$id}/withdraw", [
+			'amount' => $amount
+		]);
+
+        return $this->responseArray($response);
+	}
+
+	/**
+     * Block a virtual card
+     * 
+     * @since 1.0
+	 * 
+     * @param string $id
+     *   *
+     * @return array
+     */
+	public function block(string $id)
+	{
+		$response = $this->put("virtual-cards/{$id}/status/block");
+
+        return $this->responseArray($response);
+	}
+
+	/**
+     * Unblock a virtual card
+     * 
+     * @since 1.0
+	 * 
+     * @param string $id
+     *   *
+     * @return array
+     */
+	public function unblock(string $id)
+	{
+		$response = $this->put("virtual-cards/{$id}/status/unblock");
+
+        return $this->responseArray($response);
+	}
+
 }

@@ -44,7 +44,7 @@ trait SendHttpRequests
      * @param array $parameters
      * @return \GuzzleHttp\Response
      */
-    public function get( string $route, array $parameters = [])
+    public function get( string $route, array $parameters = [ null ])
     {
         return $this->request('GET', $route, [
             'headers' => $this->headers(),
@@ -70,6 +70,23 @@ trait SendHttpRequests
     }
 
     /**
+     * Handle PUT method
+     * 
+     * @since 1.0
+     * 
+     * @param string $route
+     * @param array $body
+     * @return \GuzzleHttp\Response
+     */
+    public function put( string $route, array $body = [ null ])
+    {
+        return $this->request('PUT', $route, [
+            'headers' => $this->headers(),
+            'body' => json_encode($body),
+        ]);
+    }
+
+    /**
      * Handle DELETE method
      * 
      * @since 1.0
@@ -78,7 +95,7 @@ trait SendHttpRequests
      * @param array $body
      * @return \GuzzleHttp\Response
      */
-    public function delete( string $route, array $parameters = [])
+    public function delete( string $route, array $parameters = [ null ])
     {
         return $this->request('DELETE', $route, [
             'headers' => $this->headers(),

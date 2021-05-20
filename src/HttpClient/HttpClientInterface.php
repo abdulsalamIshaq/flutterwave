@@ -36,4 +36,15 @@ interface HttpClientInterface
      */
     public function post(string $route, array $body);
 
+    /**
+     * Handle PUT method
+     * 
+     * @since 1.0
+     * 
+     * @param string $route
+     * @param array $body
+     * @return \GuzzleHttp\Response
+     */
+    public function put(string $route, array $body);
+
 }
