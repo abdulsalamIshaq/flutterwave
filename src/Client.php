@@ -155,6 +155,9 @@ class Client implements HttpClientInterface
             'beneficiary' => \KayodeSuc\Flutterwave\Api\Beneficiary::class,
             'card' => \KayodeSuc\Flutterwave\Api\Card::class,
             'account' => \KayodeSuc\Flutterwave\Api\Account::class,
+            'payment_plan' => \KayodeSuc\Flutterwave\Api\PaymentPlan::class,
+            'subscription' => \KayodeSuc\Flutterwave\Api\Subscription::class,
+            'subaccount' => \KayodeSuc\Flutterwave\Api\SubAccount::class,
         ];
     }
     
