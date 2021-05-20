@@ -154,6 +154,7 @@ class Client implements HttpClientInterface
             'transfer' => \KayodeSuc\Flutterwave\Api\Transfer::class,
             'beneficiary' => \KayodeSuc\Flutterwave\Api\Beneficiary::class,
             'card' => \KayodeSuc\Flutterwave\Api\Card::class,
+            'account' => \KayodeSuc\Flutterwave\Api\Account::class,
         ];
     }
     
