@@ -163,6 +163,7 @@ class Client implements HttpClientInterface
             'otp' => \KayodeSuc\Flutterwave\Api\Otp::class,
             'settlement' => \KayodeSuc\Flutterwave\Api\Settlement::class,
             'chargeback' => \KayodeSuc\Flutterwave\Api\Chargeback::class,
+            'remita' => \KayodeSuc\Flutterwave\Api\Remita::class,
         ];
     }
     
