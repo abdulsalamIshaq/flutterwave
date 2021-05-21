@@ -17,5 +17,8 @@
         "psr-4": {
             "KayodeSuc\\Flutterwave\\": "src/"
         }
+    },
+    "require-dev": {
+        "phpro/grumphp": "^1.3"
     }
 }

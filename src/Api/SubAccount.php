@@ -89,6 +89,6 @@ class Subaccount extends AbstractApi
     {
         $response = $this->delete("subaccounts/{$id}");
 
-        return $this->responseArray($response);
+        return $this->responseArray($response);;
     }
 }
