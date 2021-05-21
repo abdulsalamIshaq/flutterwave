@@ -30,7 +30,7 @@ class Client implements HttpClientInterface
      * User agent for the HTTP client
      * @var string
      */
-    protected $userAgent = 'Flutterwave Library: kayode-suc/monnify';
+    protected $userAgent = 'Flutterwave Library: kayode-suc/flutterwave';
 
     /**
      * Secret Key for Flutterwave api
@@ -158,6 +158,11 @@ class Client implements HttpClientInterface
             'payment_plan' => \KayodeSuc\Flutterwave\Api\PaymentPlan::class,
             'subscription' => \KayodeSuc\Flutterwave\Api\Subscription::class,
             'subaccount' => \KayodeSuc\Flutterwave\Api\SubAccount::class,
+            'bill' => \KayodeSuc\Flutterwave\Api\Bill::class,
+            'bank' => \KayodeSuc\Flutterwave\Api\Bank::class,
+            'otp' => \KayodeSuc\Flutterwave\Api\Otp::class,
+            'settlement' => \KayodeSuc\Flutterwave\Api\Settlement::class,
+            'chargeback' => \KayodeSuc\Flutterwave\Api\Chargeback::class,
         ];
     }
     
