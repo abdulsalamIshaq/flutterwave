@@ -136,6 +136,18 @@ class Client implements HttpClientInterface
         return $this->key;
     }
 
+     /**
+     * Get the http client
+     * 
+     * @since 1.0
+     * 
+     * @return string
+     */
+    public function getHttpClient()
+    {
+        return $this->httpClient;
+    }
+
     /**
      * Get the user agent for the http client
      * @since 1.0

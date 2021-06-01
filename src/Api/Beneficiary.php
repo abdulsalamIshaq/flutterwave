@@ -17,9 +17,9 @@ class Beneficiary extends AbstractApi
      * 
      * @since 1.0
      * 
-     *@param string $account_number
-     *@param string $account_bank
-     *@param string $beneficiary_name
+     * @param string $account_number
+     * @param string $account_bank
+     * @param string $beneficiary_name
      *
      * @return array
      */
@@ -53,7 +53,7 @@ class Beneficiary extends AbstractApi
      * 
      * @since 1.0
      *
-     *@param int $id
+     * @param int $id
      *
      * @return array
      */
@@ -69,7 +69,7 @@ class Beneficiary extends AbstractApi
      * 
      * @since 1.0
      *
-     *@param int $id
+     * @param int $id
      *
      * @return array
      */
