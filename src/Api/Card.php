@@ -25,37 +25,37 @@ class Card extends AbstractApi
 	{
 		$response = $this->post("virtual-cards", $details);
 
-        return $this->responseArray($response);
+          return $this->responseArray($response);
 	}
 
 	/**
      * Get all virtual card
      * 
      * @since 1.0
-     *      *
+     *      
      * @return array
      */
 	public function all()
 	{
 		$response = $this->get("virtual-cards");
 
-        return $this->responseArray($response);
+          return $this->responseArray($response);
 	}
 
 	/**
      * Get single virtual card
      * 
      * @since 1.0
-	 * 
+	* 
      * @param string $id
-     *   *
+     *   
      * @return array
      */
 	public function single(string $id)
 	{
 		$response = $this->get("virtual-cards/{$id}");
 
-        return $this->responseArray($response);
+          return $this->responseArray($response);
 	}
 
 	/**
@@ -76,7 +76,7 @@ class Card extends AbstractApi
 			'debit_currency' => $debit_currency,
 		]);
 
-        return $this->responseArray($response);
+          return $this->responseArray($response);
 	}
 
 	/**
@@ -92,32 +92,32 @@ class Card extends AbstractApi
 	{
 		$response = $this->post("virtual-cards/{$id}/terminate");
 
-        return $this->responseArray($response);
+          return $this->responseArray($response);
 	}
 
 	/**
      * Get virtual card transactions
      * 
      * @since 1.0
-	 * 
+	* 
      * @param string $id
-     *   *
+     *   
      * @return array
      */
 	public function transaction(string $id)
 	{
 		$response = $this->get("virtual-cards/{$id}/transactions");
 
-        return $this->responseArray($response);
+          return $this->responseArray($response);
 	}
 
 	/**
      * Withdraw existing funds from a virtual card
      * 
      * @since 1.0
-	 * 
+	* 
      * @param string $id
-     *   *
+     *   
      * @return array
      */
 	public function withdraw(string $id, string $amount)
@@ -126,39 +126,39 @@ class Card extends AbstractApi
 			'amount' => $amount
 		]);
 
-        return $this->responseArray($response);
+          return $this->responseArray($response);
 	}
 
 	/**
      * Block a virtual card
      * 
      * @since 1.0
-	 * 
+	* 
      * @param string $id
-     *   *
+     *   
      * @return array
      */
 	public function block(string $id)
 	{
 		$response = $this->put("virtual-cards/{$id}/status/block");
 
-        return $this->responseArray($response);
+          return $this->responseArray($response);
 	}
 
 	/**
      * Unblock a virtual card
      * 
      * @since 1.0
-	 * 
+	* 
      * @param string $id
-     *   *
+     *   
      * @return array
      */
 	public function unblock(string $id)
 	{
 		$response = $this->put("virtual-cards/{$id}/status/unblock");
 
-        return $this->responseArray($response);
+          return $this->responseArray($response);
 	}
 
 }

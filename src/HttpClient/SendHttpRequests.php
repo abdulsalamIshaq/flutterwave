@@ -61,11 +61,12 @@ trait SendHttpRequests
      * @param array $body
      * @return \GuzzleHttp\Response
      */
-    public function post( string $route, array $body)
+    public function post( string $route, array $body, array $parameters = [ null ])
     {
         return $this->request('POST', $route, [
             'headers' => $this->headers(),
             'body' => json_encode($body),
+            'query' => $parameters,
         ]);
     }
 

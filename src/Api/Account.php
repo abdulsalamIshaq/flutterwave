@@ -50,7 +50,7 @@ class Account extends AbstractApi
      * @since 1.0
      * 
      * @param string $batch_id
-     *   *
+     *   
      * @return array
      */
     public function bulk(string $batch_id)
@@ -66,7 +66,7 @@ class Account extends AbstractApi
      * @since 1.0
      * 
      * @param string $order_ref
-     *   *
+     *   
      * @return array
      */
     public function single(string $order_ref)

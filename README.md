@@ -18,7 +18,7 @@ Via [Composer](https://getcomposer.org).
 
 This project is still in beta version and has not been upload to packagis
 
-##Transactions
+## Transactions
 
 ### Get all transactions
 
@@ -211,4 +211,165 @@ $client = new Client('Your Api Key');
 $transaction = $client->transaction->timeline(2069367));
 
 print_r($transaction);
+```
+
+## Transfer
+
+### Create transfer
+
+https://developer.flutterwave.com/reference#create-a-transfer
+```php
+/**
+ * Create bank transfer
+ * 
+ * @since 1.0
+ * 
+ * @param array $details
+ * 
+ * $client->transfer->create(array $details);
+ * 
+ * @return array
+ */
+
+$transfer = $client->transfer->create(
+    [
+        'account_bank' => '035',
+        'account_number' => '7823810197',
+        'amount' => '100',
+        'narration' => 'Akhlm Pstmn Trnsfr xx0090',
+        'currency' => 'NGN',
+        'reference' => '23tdfuyt79_6rytfhtrr645',
+        'callback_url' => 'https://webhook.site/b3e505b0-fe02-430e-a538-22bbbce8ce0d',
+        'debit_currency' => 'NGN',
+    ]
+));
+
+print_r($transfer);
+```
+
+### Transfer retry
+
+https://developer.flutterwave.com/reference#transfer-retry
+```PHP
+/**
+ * Retry bank transfer
+ * 
+ * @since 1.0
+ * 
+ * @param Int $id
+ * @return array
+ */
+
+$retry = $client->transfer->retry(191272);
+print_r($retry);
+```
+### Create Bulk transfer
+https://developer.flutterwave.com/reference#create-bulk-transfer
+```PHP
+/**
+ * create bulk transfer
+ * 
+ * @since 1.0
+ * 
+ * @param array $details
+ * @return array
+ */
+$transfers = $client->transfer->retry(array());
+print($transfers);
+```
+
+### Get Transfer Fee
+https://developer.flutterwave.com/reference#get-transfer-fee
+```PHP
+/**
+ * Get transfer fee
+ * 
+ * @since 1.0
+ *
+ * @param array $details
+ * @return array
+ */
+
+$fees = $client->transfer->fee([]);
+print($fees);
+```
+
+### Get all transfers
+https://developer.flutterwave.com/reference#get-all-transfers
+```PHP
+/**
+ * Get all transfers
+ * 
+ * @since 1.0
+ *
+ * @return array
+ */
+$transfers = $client->transfer->all();
+print_r($transfers);
+```
+
+### Get a transfers
+https://developer.flutterwave.com/reference#get-a-transfer
+```PHP
+/**
+ * Get a transfer
+ * 
+ * @since 1.0
+ *
+ * @param int $id
+ *
+ * @return array
+ */
+$transfer = $client->transfer->single(191112);
+print_r($transfer);
+```
+
+### Get a transfer retry
+https://developer.flutterwave.com/reference#get-a-transfer-retry
+```PHP
+/**
+ * Fetch transfer retry attempts for a single transfer on your account
+ * 
+ * @since 1.0
+ *
+ * @param int $id
+ *
+ * @return array
+ */
+$retry = $client->transfer->retry_attempt(191112);
+print_r($retry);
+```
+
+### Get bulk transfer 
+https://developer.flutterwave.com/reference#get-a-bulk-transfer
+```PHP
+/**
+ * Get the status of a bulk transfer on your account
+ * 
+ * @since 1.0
+ *
+ * @param int $id
+ *
+ * @return array
+ */
+$bulk = $client->transfer->get_bulk(191112);
+print_r($bulk);
+```
+
+### Check transfer rate
+https://developer.flutterwave.com/reference#check-transfer-rates
+```PHP
+/**
+ * Transfer rates when making international transfers
+ * 
+ * @since 1.0
+ *
+ * @param int $amount
+ * @param string $destination_currency
+ * @param string $source_currency
+ *
+ * @return array
+ */
+$rate = $client->transfer->rate(1000, 'USD', 'NGN');
+print_r($rate);
 ```

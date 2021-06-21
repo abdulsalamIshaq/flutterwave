@@ -22,9 +22,9 @@ class Transfer extends AbstractApi
      */
 	public function create(array $details)
 	{
-		$response = $this->post("transfers", $details);
+          $response = $this->post("transfers", $details);
 
-        return $this->responseArray($response);
+          return $this->responseArray($response);
 	}
 
 	/**
@@ -39,7 +39,7 @@ class Transfer extends AbstractApi
 	{
 		$response = $this->post("transfers/{$id}/retries", [null]);
 
-        return $this->responseArray($response);
+          return $this->responseArray($response);
 	}
 
 	/**
@@ -50,11 +50,11 @@ class Transfer extends AbstractApi
      * @param array $details
      * @return array
      */
-	public function create_bulk(array $details)
+	public function bulk_transfer(array $details)
 	{
 		$response = $this->post("bulk-transfers", $details);
 
-        return $this->responseArray($response);
+          return $this->responseArray($response);
 	}
 
 	/**
@@ -69,7 +69,7 @@ class Transfer extends AbstractApi
 	{
 		$response = $this->get('transfers/fee', $details);
 
-        return $this->responseArray($response); 
+          return $this->responseArray($response); 
 	}
 
 	/**
@@ -83,7 +83,7 @@ class Transfer extends AbstractApi
 	{
 		$response = $this->get('transfers');
 
-        return $this->responseArray($response); 
+          return $this->responseArray($response); 
 	}
 
 	/**
@@ -99,7 +99,7 @@ class Transfer extends AbstractApi
 	{
 		$response = $this->get("transfers/{$id}");
 
-        return $this->responseArray($response);
+          return $this->responseArray($response);
 	}
 
 	/**
@@ -115,7 +115,7 @@ class Transfer extends AbstractApi
 	{
 		$response = $this->get("transfers/{$id}/retries");
 
-        return $this->responseArray($response);
+          return $this->responseArray($response);
 	}
 
 	/**
@@ -131,7 +131,7 @@ class Transfer extends AbstractApi
 	{
 		$response = $this->get("transfers", ['batch_id' => $batch_id]);
 
-        return $this->responseArray($response);
+          return $this->responseArray($response);
 	}
 
 	/**
@@ -153,7 +153,7 @@ class Transfer extends AbstractApi
 			'source_currency' => $source_currency,
 		]);
 
-        return $this->responseArray($response);
+          return $this->responseArray($response);
 	}
 
 
