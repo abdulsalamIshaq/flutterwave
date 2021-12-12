@@ -13,6 +13,9 @@ Uses [Flutterwave API](https://developer.flutterwave.com/reference).
 ## Installation
 
 Via [Composer](https://getcomposer.org).
+```bash
+composer require kayode-suc/flutterwave
+```
 
 ### PHP 7.2+:
 
