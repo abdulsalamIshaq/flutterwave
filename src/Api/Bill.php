@@ -13,7 +13,7 @@ namespace KayodeSuc\Flutterwave\Api;
 class Bill extends AbstractApi
 {
 	/**
-     * Get all bill categories on your account
+     * Get all bill categories
      * 
      * @since 1.0
      *
@@ -27,6 +27,108 @@ class Bill extends AbstractApi
     }
 
     /**
+     * Get all airtime bill categories
+     * 
+     * @since 1.0
+     *
+     * @return array
+     */
+    public function getAirtime()
+    {
+        $response = $this->get("bill-categories", ['airtime' => 1]);
+
+        return $this->responseArray($response);
+    }
+
+    /**
+     * Get all airtime bill categories
+     * 
+     * @since 1.0
+     *
+     * @return array
+     */
+    public function getData()
+    {
+        $response = $this->get("bill-categories", ['data_bundle' => 1]);
+
+        return $this->responseArray($response);
+    }
+
+    /**
+     * Get all airtime bill categories
+     * 
+     * @since 1.0
+     *
+     * @return array
+     */
+    public function getInternet()
+    {
+        $response = $this->get("bill-categories", ['internet' => 1]);
+
+        return $this->responseArray($response);
+    }
+
+    /**
+     * Get all airtime bill categories
+     * 
+     * @since 1.0
+     *
+     * @return array
+     */
+    public function getPower()
+    {
+        $response = $this->get("bill-categories", ['power' => 1]);
+
+        return $this->responseArray($response);
+    }
+
+    /**
+     * Get all airtime bill categories
+     * 
+     * @since 1.0
+     *
+     * @return array
+     */
+    public function getCable()
+    {
+        $response = $this->get("bill-categories", ['cables' => 1]);
+
+        return $this->responseArray($response);
+    }
+
+    /**
+     * Get all airtime bill categories
+     * 
+     * @since 1.0
+     *
+     * @return array
+     */
+    public function getToll()
+    {
+        $response = $this->get("bill-categories", ['toll' => 1]);
+
+        return $this->responseArray($response);
+    }
+
+    /**
+     * Get all airtime bill categories using biller code
+     * 
+     * @since 1.0
+     * 
+     * @param String $item_code
+     *
+     * @return array
+     */
+    public function code(String $item_code)
+    {
+        $response = $this->get("bill-categories", ['biller_code' => $code]);
+
+        return $this->responseArray($response);
+    }
+
+    
+
+    /**
      * Validate services bills like DSTV smartcard no, Meter number etc.
      * 
      * @param string $item_code
@@ -35,9 +137,12 @@ class Bill extends AbstractApi
      *
      * @return array
      */
-    public function validate(string $item_code)
+    public function validate(string $item_code, String $code, String $customer)
     {
-        $response = $this->get("bill-items/{$item_code}/validate");
+        $response = $this->get("bill-items/{$item_code}/validate", [
+            'code' => $code,
+            'customer' => $customer
+        ]);
 
         return $this->responseArray($response);
     }

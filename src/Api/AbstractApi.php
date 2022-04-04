@@ -97,6 +97,7 @@ class AbstractApi
     public function responseArray( ResponseInterface $response)
     {
         $body = $response->getBody()->__toString();
+        // print_r($body);
         if (strpos($response->getHeaderLine('Content-Type'), 'application/json') === 0) {
             $content = json_decode($body, true);
             if (JSON_ERROR_NONE === json_last_error()) {
